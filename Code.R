@@ -1,6 +1,8 @@
-# Read Data from CSV file
+source("https://bioconductor.org/biocLite.R")
+biocLite("edgeR")
+biocLite("org.Hs.eg.db")
 
-?read.delim
+# Read Data from CSV file
 df <- read.csv("sample_rnaseq_data.csv", header = TRUE, row.names = "gene_id")
 head(df)
 
@@ -10,7 +12,6 @@ subsetDF1 <-  subset(df, rownames(df) %in% c("ENSG00000000003", "ENSG00000000457
                                              "ENSG00000005189", "ENSG00000005801", "ENSG00000006016"))
                      
 head(subsetDF1)
-
 rownames(subsetDF1)
 
 library(edgeR)
